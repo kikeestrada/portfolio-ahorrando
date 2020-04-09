@@ -1,0 +1,12 @@
+.blog-post{
+	.main-header{
+	 	background-image: none;
+	 	background-color: $light-grey;
+	 	padding-bottom: 40px;
+	 	min-height: 0;
+
+	 	@include bp(sm){
+	 		padding-bottom: 0;
+		}
+	}
+}

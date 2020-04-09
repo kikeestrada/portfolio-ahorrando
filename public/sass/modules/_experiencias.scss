@@ -1,0 +1,86 @@
+.experiencias{
+	margin: 0 0 50px 0;
+
+	& > .row{
+		@include bp(lg){
+			padding: 0 125px;
+		}
+	}
+
+	.section-header{
+		@include rem(font-size, 2.4rem);
+
+		@include bp(sm){
+			@include rem(font-size, 3.4rem);
+			line-height: 1;
+		}
+
+		@include bp('min-width:1100px'){
+			@include rem(font-size, 3.9rem);
+		}
+	}
+
+	.section-subheader{
+		display: block;
+		@include rem(font-size, 1.4rem);
+
+		@include bp(sm){
+			@include rem(font-size, 1.8rem);
+		}
+
+		@include bp(md){
+			@include rem(font-size, 2.3rem);
+		}
+	}
+
+	h3{
+		font-family : 'HindMedium', Helvetica, Arial, Sans-Serif;
+		@include rem(font-size, 2.9rem);
+		color: $red;
+	}
+
+	figure{
+		position: relative;
+		width: 100%;
+		max-height: 350px;
+		margin: 0 0 20px 0;
+		overflow: hidden;
+
+		img{
+			width: 100%;
+		}
+	}
+
+	.date-comments{
+		font-family : 'RobotoRegular', Helvetica, Arial, Sans-Serif;
+		@include rem(font-size, 1.5rem);
+		color: $grey;
+	}
+
+	.comments{
+		img{
+			width: 17px;
+			height: 16px;
+			margin: 0 5px;
+		}
+	}
+
+	.post-body{
+		p{
+			font-family : 'RobotoRegular', Helvetica, Arial, Sans-Serif;
+			@include rem(font-size, 1.4rem);
+			color: $dark-grey;
+		}
+	}
+
+	.cta-container{
+		font-family : 'RobotoRegular', Helvetica, Arial, Sans-Serif;
+		@include rem(font-size, 1.4rem);
+		font-weight: bold;
+		margin: 40px 0 0 0;
+		a{
+			@include two-color-btn(#E36B6C, #C15B5C, -15deg);
+			padding: 10px 30px;
+		}
+	}
+}

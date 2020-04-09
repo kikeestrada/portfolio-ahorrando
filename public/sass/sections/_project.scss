@@ -1,0 +1,548 @@
+.elproyecto{
+	.main-header{
+		background-image: none;
+		background-color: $light-grey;
+		padding-bottom: 40px;
+		padding-top: 120px;
+		min-height: 0;
+
+		@include bp(sm){
+			padding-bottom: 0;
+		}
+	}
+
+	.hero-section{
+		.stats-container{
+		    width: 100%;
+
+		    @include bp(sm){
+		    	@include clearfix;
+		    	position: absolute;
+		    	bottom: 0;
+		    	left: 0;
+		    	min-height: 150px;
+		    	padding: 0 20px;
+		    }
+
+		    @include bp(md){
+		    	padding: 0 80px;
+		    }
+
+		    .stat{
+		    	position: relative;
+		    	@include clearfix;
+		    	width: 300px;
+		    	margin: 20px auto;
+
+		    	@include bp(sm){
+		    		float: left;
+		    		width: 25%;
+		    		min-height: 180px;
+		    		margin: 20px 0 0;
+		    	}
+
+		    	@include bp(md){
+		    		min-height: 200px;
+		    		margin: 20px 0;
+		    	}
+		    }
+
+		    .stat-description{
+			    font-family: 'HindMedium', Helvetica, Sans-Serif;
+				@include rem(font-size, 1.5rem);
+			    margin: 15px 0 0 20px;
+			    max-width: 200px;
+			    line-height: 1;
+			    text-align: center;
+			    border-radius: 25px;
+			    padding: 10px 20px 0px;
+			    color: white;
+			    float: left;
+
+			    &.stat-green{
+					background-color: $green;
+				}
+
+				&.stat-orange{
+					background-color: $orange;
+				}
+
+				&.stat-lime{
+					background-color: $lime;
+				}
+
+				&.stat-blue{
+					background-color: $light-blue;
+				}
+
+			    @include bp(sm){
+			    	position: absolute;
+				    bottom: 10px;
+				    left: 0;
+				    right: 0;
+				    margin: 0 auto;
+				    float: none;
+				    max-width: 164px;
+				    padding: 15px 10px 0px;
+				    @include rem(font-size, 1.4rem);
+
+			    	&.stat-green{
+						background-color: transparentize(black, 0.5);
+					}
+
+					&.stat-orange{
+						background-color: transparentize(black, 0.5);
+					}
+
+					&.stat-lime{
+						background-color: transparentize(black, 0.5);
+					}
+
+					&.stat-blue{
+						background-color: transparentize(black, 0.5);
+					}
+			    }
+
+			    @include bp(md){
+			    	@include rem(font-size, 1.5rem);
+			    	padding: 10px 25px 0px;
+			    	max-width: 204px;
+			    }
+
+			    p{
+
+					text-transform: uppercase;
+			    }
+		    }
+
+		    .circle-stat{
+		    	position: relative;
+		    	margin: 0 auto;
+		    	display: block;
+		    	float: left;
+		    	width: 80px;
+				height: 80px;
+
+				&:after{
+					width: 80px;
+					height: 80px;
+					top: 0px;
+					left: 0px;
+					border: 2px solid white;
+					border-radius: 50%;
+					z-index: 3;
+					@include stat-animation(stats-big-in-mobile, 80px, 0px, 90px, -5px);
+					@include animation('stats-big-in-mobile 1s normal 1s forwards cubic-bezier(0.175, 0.885, 0.320, 1.275)');
+				}
+
+				@include bp(sm){
+					position: absolute;
+					right: 0;
+			    	left: 0;
+			    	top: 0;
+			    	width: 90px;
+					height: 90px;
+					float: none;
+
+					&:after{
+						width: 90px;
+						height: 90px;
+						@include stat-animation(stats-big-in-tablet, 90px, 0px, 110px, -10px);
+						@include animation('stats-big-in-tablet 1s normal 1s forwards cubic-bezier(0.175, 0.885, 0.320, 1.275)');
+					}
+				}
+
+				@include bp(md){
+					width: 108px;
+					height: 108px;
+					&:after{
+						width: 108px;
+						height: 108px;
+						@include stat-animation(stats-big-in, 108px, 0px, 128px, -10px);
+						@include animation('stats-big-in 1s normal 1s forwards cubic-bezier(0.175, 0.885, 0.320, 1.275)');
+					}
+				}
+
+				&.stat-green{
+					@include two-color-bg(transparentize($green, 0.3), $green, -45deg);
+					&:after{
+						border: 2px solid $green;
+						@include bp(sm){
+							border-color: white;
+						}
+					}
+				}
+
+				&.stat-orange{
+					@include two-color-bg(transparentize($orange, 0.3), $orange, -45deg);
+					&:after{
+						border: 2px solid $orange;
+						@include bp(sm){
+							border-color: white;
+						}
+					}
+				}
+
+				&.stat-lime{
+					@include two-color-bg(transparentize($lime, 0.3), $lime, -45deg);
+					&:after{
+						border: 2px solid $lime;
+						@include bp(sm){
+							border-color: white;
+						}
+					}
+				}
+
+				&.stat-blue{
+					@include two-color-bg(transparentize($light-blue, 0.3), $light-blue, -45deg);
+					&:after{
+						border: 2px solid $light-blue;
+						@include bp(sm){
+							border-color: white;
+						}
+					}
+				}
+
+				p{
+					@include rem(font-size, 2.0rem);
+					line-height: 80px;
+
+					@include bp(sm){
+						@include rem(font-size, 2.4rem);
+						line-height: 90px;
+					}
+
+					@include bp(md){
+						@include rem(font-size, 3.1rem);
+						line-height: 108px;
+					}
+				}
+		    }
+		}
+	}
+
+	.participantes{
+		padding: 40px 15px;
+		font-family: 'HindMedium', Helvetica, Sans-Serif;
+		@include rem(font-size, 2.1rem);
+
+		.part-slide{
+			text-align: center;
+		}
+
+		figure{
+			margin: 0 auto 30px auto;
+			max-width: 144px;
+			img{
+				width: 100%;
+			}
+		}
+	}
+
+	.promocion{
+		padding: 40px 15px 10px;
+
+		@include bp(md){
+			padding: 40px 15px 60px;
+		}
+
+		@include bp(md){
+			padding: 40px 100px 60px;
+		}
+
+		.section-header{
+			margin-bottom: 40px;
+			text-transform: uppercase;
+			@include rem(font-size, 2.4rem);
+
+			@include bp(sm){
+				@include rem(font-size, 3.3rem);
+			}
+		}
+
+		figure{
+			@include showDesktop();
+		}
+
+		.description{
+			text-align: center;
+			font-family : 'HindRegular', Helvetica, Arial, Sans-Serif;
+			@include rem(font-size, 1.4rem);
+			
+			article{
+				max-width: 485px;
+				margin: 0 auto;
+			}
+
+			strong{
+				font-family : 'HindMedium', Helvetica, Arial, Sans-Serif;
+			}
+
+			@include bp(sm){
+				text-align: left;
+				@include rem(font-size, 1.5rem);
+
+				strong{
+					@include rem(font-size, 1.6rem);
+				}
+			}
+
+			@include bp(md){
+				@include rem(font-size, 1.7rem);
+
+				strong{
+					@include rem(font-size, 1.9rem);
+				}
+			}
+		}
+	}
+
+	.ongs{
+		background-color: #F1F1F1;
+		padding: 40px 15px;
+		text-align: center;
+
+		.section-header{
+			text-transform: uppercase;
+		}
+
+		.section-subheader{
+			@include rem(font-size, 1.4rem);
+			max-width: 996px;
+			margin: 0 auto 40px auto;
+			display: block;
+
+			@include bp(sm){
+				@include rem(font-size, 1.9rem);
+			}
+		}
+	}
+}
+
+.quote{
+	background-color: #F1F1F1;
+	padding: 43px 20px;
+	font-family : 'HindRegular', Helvetica, Arial, Sans-Serif;
+	@include rem(font-size, 1.4rem);
+	text-align: center;
+
+	@include bp(sm){
+		padding: 43px 30px;
+		text-align: left;
+		@include rem(font-size, 1.8rem);
+	}
+
+	@include bp(md){
+		padding: 43px 140px;
+		@include rem(font-size, 2.4rem);
+	}
+
+	strong{
+		font-family : 'HindSemibold', Helvetica, Arial, Sans-Serif;
+	}
+}
+
+.escuelasRegistradasContainer{
+	.main-header{
+		background-image: none;
+		background-color: $light-grey;
+		position: relative;
+		padding-bottom: 40px;
+		padding-top: 120px;
+		min-height: 0;
+
+		@include bp(sm){
+			padding-bottom: 0;
+		}
+	}
+
+	.hero-section{
+		.row{
+			position: relative;
+			height: 400px;
+
+			@include bp(sm){
+				height: 650px;
+			}
+
+			@include bp(md){
+				height: 860px;
+			}
+		}
+	}
+
+	#map {
+		position:absolute;
+		top:0;
+		bottom:0;
+		width:100%;
+
+		.leaflet-bottom{
+			display: none;
+		}
+	}
+
+	.search-container{
+		padding: 40px 15px;
+
+		.countries{
+			ul{
+				@include clearfix;
+				text-align: center;
+				margin: 0 auto;
+
+				@include bp(sm){
+					margin: 40px auto;
+				}
+
+				li{
+					display: inline-block;
+					width: 64px;
+					height: 64px;
+					border-radius: 50%;
+					position: relative;
+					cursor: pointer;
+					background-size: 64px 64px;
+					margin: 10px 10px;
+
+					@include bp(sm){
+						margin: 20px 50px;
+					}
+
+					@include bp(md){
+						margin: 10px 20px;
+					}
+
+					&:after{
+						content: '';
+						display: block;
+						width: 25px;
+						height: 25px;
+						border-radius: 50%;
+						background-color: white;
+						background-image: url("../images/country-check.svg");
+						position: absolute;
+						top: -10px;
+						right: -10px;
+						transform: scale(0);
+						@include animation('check-popdown 0.3s forwards ease');
+					}
+					
+					&:before{
+						content: '';
+						display: block;
+						width: 84px;
+						height: 84px;
+						border-radius: 50%;
+						border: 1px solid $light-grey;
+						position: absolute;
+						top: -10px;
+						left: -10px;
+						@include transition(all 0.5s ease);
+					}
+
+					&.pn{
+						background-image: url("../images/circle-panama.png");
+					}
+					&.cr{
+						background-image: url("../images/circle-costarica.png");
+					}
+					&.ni{
+						background-image: url("../images/circle-nicaragua.png");
+					}
+					&.ho{
+						background-image: url("../images/circle-honduras.png");
+					}
+					&.es{
+						background-image: url("../images/circle-elsalvador.png");
+					}
+					&.gu{
+						background-image: url("../images/circle-guatemala.png");
+					}
+					&.be{
+						background-image: url("../images/circle-belice.png");
+					}
+					&.mx{
+						background-image: url("../images/circle-mexico.png");
+					}
+
+					&.selected{
+						&:before{
+							border: 1px solid $green;
+						}
+
+						&:after{
+							@include animation('check-popup 0.5s forwards cubic-bezier(0.175, 0.885, 0.320, 1.275)');
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.form-container{
+		@include clearfix;
+		padding: 0;
+		margin: 40px 0;
+
+		@include bp(sm){
+			padding: 0 40px;
+		}
+
+		@include bp(md){
+			padding: 0 110px;
+		}
+
+		input[type="text"]{
+			width: 80%;
+			background-color: $light-grey;
+			color: $grey;
+			border: none;
+			line-height: 65px;
+			padding: 0 20px;
+			float: left;
+
+			@include bp(sm){
+				width: 90%;
+			}
+		}
+
+		.search-btn{
+			cursor: pointer;
+			background-color: red;
+			background-image: url('../images/magnify-icon.svg');
+			background-size: 30px 30px;
+			background-position: center center;
+			height: 65px;
+			width: 20%;
+			float: left;
+			@include transition(background-size 0.3s ease);
+
+			@include bp(sm){
+				width: 10%;
+			}
+
+			&:hover{
+				background-size: 25px 25px;
+			}
+		}
+	}
+
+	.register-btn{
+		text-align: center;
+		
+		.border-btn{
+			border-color: $red;
+			padding: 10px 15px;
+		}
+	}
+}
+
+@include mapMarker('pn', '../images/pin-panama.png');
+@include mapMarker('cr', '../images/pin-costarica.png');
+@include mapMarker('ni', '../images/pin-nicaragua.png');
+@include mapMarker('ho', '../images/pin-honduras.png');
+@include mapMarker('es', '../images/pin-elsalvador.png');
+@include mapMarker('gu', '../images/pin-guatemala.png');
+@include mapMarker('be', '../images/pin-belice.png');
+@include mapMarker('mx', '../images/pin-mexico.png');

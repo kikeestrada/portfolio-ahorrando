@@ -1,0 +1,41 @@
+//---------------------------------------GLOBAL----------------------------------
+@import "_fonts";
+@import "_variables";
+@import "_mixins";
+@import "_animations";
+@import "_global";
+@import "_miscellaneous";
+
+//---------------------------------------LAYOUT----------------------------------
+@import "layout/_header";
+@import "layout/_menu";
+@import "layout/_footer";
+
+//--------------------------------------MODULES---------------------------------
+@import "modules/_buttons";
+@import "modules/_custom-slick";
+@import "modules/_custom-instafeed";
+
+@import "modules/_custom-select";
+@import "modules/_materiales-educativos";
+@import "modules/_testimonios";
+@import "modules/_importancia";
+@import "modules/_aprende-jugando";
+@import "modules/_involucrate";
+@import "modules/_experiencias";
+@import "modules/_collections";
+@import "modules/_search-module";
+@import "modules/_onoffswitch";
+@import "modules/_map";
+@import "modules/_nueva-coleccion";
+@import "modules/_nuevo-material";
+
+//--------------------------------------SECTIONS---------------------------------
+@import "sections/_home";
+@import "sections/_project";
+@import "sections/_blog-post";
+@import "sections/_user-dashboard";
+@import "sections/_material-view";
+@import "sections/_material-library";
+@import "sections/_collections_library";
+@import "sections/_register";

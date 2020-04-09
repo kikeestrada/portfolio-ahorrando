@@ -1,0 +1,54 @@
+.main-logo-container{
+	position: relative;
+	text-align: center;
+	background-color: transparent;
+	height: 1px;
+}
+
+.main-logo{
+	position: relative;
+	display: inline-block;
+	margin: -20px auto 0 auto;
+	z-index: 9000;
+
+	img{
+	    position: relative;
+	    top: -200px;
+	    left: 0;
+	    right: 0;
+	    width: 208px;
+	    height: auto;
+
+	    @include logo-slide-down(-230px, 20px);
+	    @include animation('logo-slide-down 1s normal 1s forwards cubic-bezier(0.175, 0.885, 0.320, 1.275)');
+
+	    @include bp(sm){
+	    	@include logo-slide-down(-230px, 0);
+			width: 372px;
+		}
+	}
+}
+
+// .main-logo{
+// 	position: relative;
+// 	display: inline-block;
+// 	margin-top: -20px;
+// 	z-index: 9000;
+
+// 	img{
+// 	    position: relative;
+// 	    top: -200px;
+// 	    left: 0;
+// 	    right: 0;
+// 	    width: 208px;
+// 	    height: auto;
+
+// 	    @include logo-slide-down(-230px, 0);
+// 	    @include animation('logo-slide-down 1s normal 1s forwards cubic-bezier(0.175, 0.885, 0.320, 1.275)');
+
+// 	    @include bp(sm){
+// 	    	@include logo-slide-down(-230px, 0);
+// 			width: 372px;
+// 		}
+// 	}
+// }

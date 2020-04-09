@@ -1,0 +1,93 @@
+.colecciones{
+	.collections-container{
+		@include clearfix;
+		padding: 20px 0;
+		// margin: 10px 0;
+
+		// @include bp(sm){
+		// 	margin: 30px 0 50px;
+		// }
+	}
+}
+
+.collection{
+	position: relative;
+	border-radius: 5px;
+	padding: 7px;
+	float: left;
+	width: 48%;
+	margin: 0 1%;
+
+	@include bp(sm){
+		width: 23%;
+		margin: 0 1%;
+		padding: 15px;
+		border-radius: 10px;
+	}
+
+	@include bp(md){
+		width: 23%;
+		margin: 0 1%;
+	}
+
+	h3{
+		font-family : 'HindMedium', Helvetica, Arial, Sans-Serif;
+		@include rem(font-size, 1.4rem);
+		margin: 0 0 12px;
+		max-width: 150px;
+
+		@include bp(sm){
+			@include rem(font-size, 1.6rem);
+		}
+	}
+
+	.previews{
+		@include clearfix;
+		margin-bottom: 10px;
+
+		figure{
+			width: 48%;
+			border-radius: 3px;
+			height: 80px;
+			display: block;
+			float: left;
+			background-size: cover;
+			background-repeat: no-repeat;
+
+			@include bp(sm){
+				height: 90px;
+			}
+
+			@include bp(md){
+				height: 130px;
+			}
+
+			&:first-child{
+				width: 100%;
+				margin-bottom: 10px;
+			}
+
+			&:last-of-type{
+				margin-left: 4%;
+			}
+		}
+	}
+
+	.cta-btn{
+		font-family : 'HindBold', Helvetica, Arial, Sans-Serif;
+		@include rem(font-size, 1.2rem);
+		display: block;
+		text-align: center;
+		width: 100%;
+		padding: 10px;
+		border-radius: 5px;
+
+		@include bp(sm){
+			@include rem(font-size, 1.4rem);
+		}
+
+		@include bp(md){
+			@include rem(font-size, 1.6rem);
+		}
+	}
+}

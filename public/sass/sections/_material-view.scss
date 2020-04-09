@@ -1,0 +1,494 @@
+.vista-material{
+	.main-header{
+		background-image: none;
+		background-color: $light-grey;
+		padding-bottom: 40px;
+		min-height: 170px;
+
+		@include bp(sm){
+			padding-bottom: 0;
+			min-height: 220px;
+		}
+
+		@include bp(md){
+			min-height: 200px;
+		}
+
+		.back-btn{
+			position: absolute;
+		    bottom: 20px;
+		    left: 20px;
+		    font-family: 'RalewayBold', Helvetica, Sans-Serif;
+			@include rem(font-size, 1.6rem);
+			text-transform: uppercase;
+		    background-color: white;
+		    padding: 10px 10px 5px;
+		    border-radius: 20px;
+		    border: 2px solid $light-blue;
+		    color: $light-blue;
+
+		    @include bp(md){
+				display: none;
+			}
+
+			img{
+				padding: 0 0 5px 0;
+				width: 23px;
+				margin: 0 15px 0 0;
+			}
+		}
+	}
+
+	.row-content{
+		background-color: white;
+
+		@include bp(md){
+			background-color: $light-grey;
+		}
+
+		@include bp(lg){
+			padding: 0 125px;
+			background-color: $light-grey;
+		}
+
+		.content, .sidebar{
+			padding: 0;
+			@include bp(md){
+				padding: 0 15px;
+			}
+		}
+	}
+
+	.material-main-view{
+		background-color: white;
+		padding: 20px;
+
+		img{
+			width: 100%;
+		}
+
+		h1{
+			font-family: 'RalewayBold', Helvetica, Sans-Serif;
+			@include rem(font-size, 2.2rem);
+			text-transform: uppercase;
+
+			@include bp(sm){
+				font-family: 'RalewaySemiBold', Helvetica, Sans-Serif;
+				@include rem(font-size, 4.7rem);
+			}
+		}
+
+		h3{
+			font-family: 'HindRegular', Helvetica, Sans-Serif;
+			@include rem(font-size, 1.9rem);
+
+			@include bp(sm){
+				@include rem(font-size, 2.3rem);
+			}
+		}
+
+		small{
+			font-family: 'RalewaySemiBold', Helvetica, Sans-Serif;
+			@include rem(font-size, 1.6rem);
+			text-transform: uppercase;
+
+			img{
+				width: 23px;
+			}
+		}
+
+		p{
+			font-family: 'HindRegular', Helvetica, Sans-Serif;
+			@include rem(font-size, 1.5rem);
+		}
+
+		.btns{
+			margin: 30px 0;
+			text-align: center;
+		}
+
+		.two-part-btn{
+			position: relative;
+			font-family: 'HindMedium', Helvetica, Sans-Serif;
+			@include rem(font-size, 1.5rem);
+			padding: 10px 15px;
+			border-radius: 15px;
+			margin: 10px 0;
+			text-align: left;
+			width: 100%;
+			display: block;
+
+			@include bp(sm){
+				text-align: center;
+				width: inherit;
+				padding: 5px 15px;
+				margin: 0 0 0 10px;
+				display: inline;
+			}
+
+			&:after{
+				content: '';
+				display: block;
+				position: absolute;
+				width: 6px;
+				height: 14px;
+				background-image: url('../images/cta-arrow.svg');
+				background-size: 6px 14px;
+				top: 12px;
+				right: 10px;
+
+				@include bp(sm){
+					display: none;
+				}				
+			}
+
+			figure{
+				position: relative;
+				display: inline;
+				
+				&:after{
+					content: '';
+					position: absolute;
+					height: 18px;
+					border-right: 1px solid white;
+					top: 3px;
+					right: -5px;
+				}
+
+				img{
+					width: 15px;
+					height: 15px;
+					padding-bottom: 2px;
+				}
+			}
+
+			span{
+				margin-left: 10px;
+			}
+			
+		}
+	}
+
+	.comments-container{
+		padding: 0 12px;
+
+		@include bp(md){
+			padding: 0;
+		}
+
+		h2{
+			font-family: 'RalewayBold', Helvetica, Sans-Serif;
+			@include rem(font-size, 2.4rem);
+		}
+
+		a{
+			color: $light-blue;
+			font-family : 'HindBold', Helvetica, Arial, Sans-Serif;
+			@include rem(font-size, 1.3rem);
+		}
+
+		.input-container{
+			@include clearfix;
+			background-color: #D0D2D3;
+			padding: 21px 10px 21px 23px;
+
+			input[type='text']{
+				width: 70%;
+				float: left;
+				line-height: 37px;
+
+				@include bp(sm){
+					width: 85%;
+				}
+			}
+
+			a{
+				font-family : 'HindBold', Helvetica, Arial, Sans-Serif;
+				@include rem(font-size, 1.7rem);
+				line-height: 43px;
+				width: 32%;
+				float: left;
+				border-radius: 20px;
+				background-color: $light-blue;
+				color: white;
+				text-align: center;
+				margin-left: -15px;
+
+				@include bp(sm){
+					width: 16%;
+				}
+			}
+		}
+
+		.comments{
+			padding: 10px 20px 10px 12px;
+			background-color: white;
+		}
+
+		.comment{
+			border-bottom: 1px solid #D0D2D3;
+			font-family : 'HindSemibold', Helvetica, Arial, Sans-Serif;
+			@include rem(font-size, 1.4rem);
+
+			h4{
+				margin-bottom: 5px;
+			}
+
+			small{
+				font-family : 'OpenSansItalic', Helvetica, Arial, Sans-Serif;
+				@include rem(font-size, 1.2rem);
+			}
+
+			p{
+				font-family : 'HindRegular', Helvetica, Arial, Sans-Serif;
+				@include rem(font-size, 1.4rem);
+			}
+		}
+
+		.link {
+			text-align: right;
+			margin-top: 15px;
+			a{
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.dotted-separator{
+		@include showOnlyDesktop;
+		padding: 5px;
+		background-image: repeating-radial-gradient(center center, rgba(0,0,0,1), rgba(0,0,0,1) 1px, transparent 1px, transparent 100%);
+		background-size: 14px 14px;
+		background-repeat: repeat-x;
+		margin: 15px 0 0;
+	}
+
+	.materials-cta{
+		@include clearfix;
+		font-family : 'HindMedium', Helvetica, Arial, Sans-Serif;
+		@include rem(font-size, 1.6rem);
+		background-color: $orange;
+		padding: 10px 15px;
+
+		@include bp(md){
+			display: none;
+		}
+
+		img{
+			float: right;
+			width: 7px;
+		}
+	}
+
+	.sidebar-box{
+		background-color: white;
+		padding: 20px 18px 0;
+		border-radius: 20px;
+		text-align: center;
+
+		a{
+			font-family : 'HindSemibold', Helvetica, Arial, Sans-Serif;
+			@include rem(font-size, 2.2rem);
+			margin: 20px -18px;
+			border-radius: 0 0 20px 20px;
+			display: block;
+			padding: 10px 0;
+		}
+	}
+
+	.similar{
+		h3{
+			font-family : 'RalewaySemiBold', Helvetica, Arial, Sans-Serif;
+			@include rem(font-size, 3.1rem);
+			color: $green;
+		}
+
+		h4{
+			font-family : 'HindBold', Helvetica, Arial, Sans-Serif;
+			@include rem(font-size, 1.9rem);
+		}
+
+		h5{
+			font-family : 'HindRegular', Helvetica, Arial, Sans-Serif;
+			@include rem(font-size, 2.1rem);
+		}
+
+		a{
+			background-color: $green;
+		}
+
+		.thumbs{
+			.thumbs-row{
+				@include clearfix;
+			}
+
+			.thumb{
+				&.small{
+					figure{
+						height: 83px;
+					}
+				}
+
+				&.large{
+					figure{
+						height: 266px;
+					}
+				}
+			}
+		}
+	}
+	
+	.related{
+		margin-top: 20px;
+
+		h3{
+			font-family : 'RalewaySemiBold', Helvetica, Arial, Sans-Serif;
+			@include rem(font-size, 3.1rem);
+			color: $dark-orange;
+		}
+
+		a{
+			background-color: $dark-orange;
+		}
+	}
+
+	.thumbs{
+		@include clearfix;
+
+		.thumb{
+			width: 50%;
+			float: left;
+			padding: 5px;
+
+			figure{
+				width: 100%;
+				height: 170px;
+				border-radius: 5px;
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center center;
+			}
+		}
+	}
+
+	.more-collections{
+		@include showOnlyDesktop;
+		h2{
+			font-family : 'RalewayBold', Helvetica, Arial, Sans-Serif;
+			@include rem(font-size, 2.4rem);
+		}
+	}
+
+	.collection{
+		background-color: white;
+
+		@include bp(sm){
+			width: 31%;
+		}
+
+		.previews{
+			figure{
+				@include bp(md){
+					height: 100px;
+				}
+			}
+		}
+	}
+
+	.sidebar{
+		@include showOnlyDesktop;
+	}
+
+	.asset-info-container{
+		padding: 0 15px;
+
+		@include bp(md){
+			padding: 0;
+		}
+
+		ul{
+			@include clearfix;
+			li{
+				display: block;
+				vertical-align: top;
+				float: left;
+				width: 33.32%;
+				position: relative;
+				padding: 0 15px 0 0;
+
+				&:after{
+					content: '';
+					display: block;
+					position: absolute;
+					width: 1px;
+					background-color: white;
+					height: 60px;
+					top: 0;
+					right: 15px;
+				}
+
+				&:last-of-type{
+					&:after{
+						display: none;
+					}
+				}
+			}
+		}
+
+		.stats{
+			position: relative;
+			font-family : 'RobotoRegular', Helvetica, Arial, Sans-Serif;
+			background-color: transparentize($grey, 0.4);
+			color: white;
+			padding: 10px;
+			margin-bottom: 20px;
+
+			&:after{
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0 30px 30px 0;
+				border-color: transparent $grey transparent transparent;
+			}
+			
+			h4{	
+				@include rem(font-size, 2.2rem);
+				margin-bottom: 0;
+			}
+
+			p{
+				@include rem(font-size, 1.5rem);
+			}
+		}
+
+		.material-info{
+			text-align: left;
+			margin-bottom: 20px;
+
+			li{
+				&:after{
+					background-color: $grey;
+				}
+			}
+
+			h4{	
+				font-family : 'HindSemibold', Helvetica, Arial, Sans-Serif;
+				@include rem(font-size, 1.1rem);
+				color: $dark-grey;
+				text-transform: uppercase;
+				margin-bottom: 5px;
+			}
+
+			p{
+				font-family : 'HindSemibold', Helvetica, Arial, Sans-Serif;
+				@include rem(font-size, 1.1rem);
+				color: $grey;
+			}
+		}
+	}
+}
