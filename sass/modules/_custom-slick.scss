@@ -1,0 +1,18 @@
+.slick-slider{
+	img{
+		margin: 0 auto;
+	}
+
+	.slick-active{
+		.slide-dot{
+			background-image: url('../images/mark-dot.svg');
+		}
+	}
+
+	.slide-dot{
+		display: block;
+		width: 14px;
+		height: 14px;
+		background-image: url('../images/dot.svg');
+	}
+}

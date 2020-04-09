@@ -1,0 +1,39 @@
+@mixin logo-slide-down($pos1, $pos2){
+	@include keyframes(logo-slide-down) {
+		0% { top: $pos1; opacity:0; }
+		100% { top: $pos2; opacity:1; }
+	}	
+}
+
+@mixin stat-animation($name, $size1, $pos1, $size2, $pos2){
+	@include keyframes($name) {
+		0% {
+			width: $size1;
+			height: $size1;
+			top: $pos1;
+			left: $pos1;
+		}
+		100% {
+			width: $size2;
+			height: $size2;
+			top: $pos2;
+			left: $pos2;
+		}
+	}
+}
+
+@include keyframes(loading) {
+	0% { transform: rotate(0); }
+	100% { transform: rotate(360deg); }
+}	
+
+
+@include keyframes(check-popup) {
+	0% { transform: scale(0); }
+	100% { transform: scale(1); }
+} 
+
+@include keyframes(check-popdown) {
+	0% { transform: scale(1); }
+	100% { transform: scale(0); }
+} 

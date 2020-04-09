@@ -1,0 +1,403 @@
+*:focus {
+	outline: none;
+}
+
+*, *:before, *:after {
+	background-repeat: no-repeat;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+*::-moz-focus-inner, *:before::-moz-focus-inner, *:after::-moz-focus-inner {
+	border: 0;
+
+}
+
+::-webkit-input-placeholder {
+   color: $dark-grey;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: $dark-grey;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: $dark-grey;  
+}
+
+:-ms-input-placeholder {  
+   color: $dark-grey;  
+}
+
+html {
+	font-size: 62.5%;
+}
+
+ul{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+input::-moz-focus-inner { 
+	border: 0; 
+}
+
+object, embed { 
+	outline: 0;
+}
+
+a:hover, a:focus, a:active{
+	outline: 0;
+}
+
+a{
+	outline: 0;
+	text-decoration: none;
+	color: white;
+	@include transition(color .5s ease);
+
+	&:hover, &:focus{
+		text-decoration: none;
+		color: #DDD;
+	}
+}
+
+.disabled{
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+.loader{
+	display: none;
+	text-align: center;
+	margin: 25px 0;
+
+	span{
+		@include animation('loading 1s infinite');
+	}
+}
+
+.loading-error{
+	display: none;
+	text-align: center;
+}
+
+.breadcrumb{
+	background-color: transparent;
+	padding: 8px 0;
+	border-radius: 0;
+	border: none;
+	display: none;
+
+	@include bp(md){
+		display: block;
+	}
+
+	&:before{
+		content: '';
+		display: inline-block;
+		background-image: url('../images/breadcrumb-icon.svg');
+		background-size: 100%;
+		background-position: center center;
+		width: 17px;
+		height: 13px;
+	}
+	&>li+li:before{
+		padding: 0;
+	}
+
+	li{
+		a{
+			font-family : 'RobotoRegular', Helvetica, Arial, Sans-Serif;
+			color: $grey;
+			&:hover, &:focus, &:active{
+				color: $grey;
+			}
+		}
+
+		&.active{
+			a{
+				font-family : 'RobotoMedium', Helvetica, Arial, Sans-Serif;
+				color: $grey;
+				&:hover, &:focus, &:active{
+					color: $grey;
+				}
+			}
+		}
+	}
+}
+
+.section-header{
+	margin: 20px 0;
+	text-align: center;
+	position: relative;
+	font-family : 'RalewaySemiBold', Helvetica, Arial, Sans-Serif;
+	@include rem(font-size, 2.1rem);
+	@include rem(line-height, 2.6rem);
+
+	@include bp(sm){
+		@include rem(font-size, 3.4rem);
+		line-height: 1;
+	}
+
+	@include bp('min-width:1100px'){
+		@include rem(font-size, 3.3rem);
+	}
+}
+
+#IEModal{
+	@include rem(font-size, 1.8rem);
+
+	@include bp(md){
+		@include rem(font-size, 2.4rem);
+	}
+
+	.modal-content{
+		padding: 40px;
+	}
+
+	a, a:hover, a:focus, a:active{
+		font-weight: bold;
+		color: $lime;
+		text-decoration: underline;
+	}
+}
+
+.show-IEmodal{
+	opacity: 1;
+    padding-right: 15px;
+    overflow-x: hidden;
+    overflow-y: auto;
+	background-color: rgba(0, 0, 0, 0.5);	
+}
+
+.section-subheader{
+	font-family : 'HindRegular', Helvetica, Arial, Sans-Serif;
+	text-align: center;
+	@include rem(font-size, 2.3rem);
+	display: none;
+
+	@include bp(md){
+		display: block;
+	}
+}
+
+.cta-container{
+	text-align: center;
+}
+
+.main-content{
+	padding: 0 12px;
+
+	@include bp(md){
+		padding: 0;
+	}
+
+	@include bp(md){
+		margin-top: 0;
+	}
+
+	section{
+		padding: 20px 0;
+
+		@include bp(md){
+			padding: 62px 80px 48px;
+		}
+
+		@include bp(lg){
+			padding: 50px 140px;
+		}
+	}
+}
+
+.card{
+	font-family: 'HindRegular', Helvetica, Sans-Serif;
+	@include rem(font-size, 1.5rem);
+	width: 100%;
+	background-color: white;
+	padding: 20px;
+	text-align: left;
+	margin: 0 auto;
+	position: relative;
+
+	@include bp(md){
+		width: 300px;
+		text-align: center;
+		min-height: 250px;
+	}
+
+	h3{
+		font-family: 'RalewaySemiBold', Helvetica, Sans-Serif;
+		@include rem(font-size, 3.8rem);
+		text-transform: uppercase;
+	}
+
+	a{
+		font-family: 'HindSemibold', Helvetica, Sans-Serif;
+		position: relative;
+		display: block;
+		margin: 10px -20px -20px;
+		border-radius: 0;
+		text-align: right;
+
+		@include bp(md){
+			position: absolute;
+			bottom: -30px;
+			display: inline;
+			margin: 0 auto;
+			border-radius: 20px;
+			text-align: center;
+			bottom: -15px;
+			left: 0;
+			right: 0;
+			max-width: 230px;
+		}
+
+		span{
+			background-color: transparentize(#222222, 0.9);
+		    display: inline-block;
+		    padding: 10px 20px;
+		    margin: -10px -30px -10px -10px;
+
+		    @include bp(md){
+		    	background-color: transparent;
+			    display: inline;
+			    padding: 0;
+			    margin: 0;
+		    }
+		}
+	}
+}
+
+.container-fluid{
+	max-width: 1280px;
+	overflow: hidden;
+}
+
+.circle-stat{
+	@include two-color-bg(transparentize(#00A69C, 0.3), #00A69C, -45deg);
+	position: absolute;
+	//padding: 30px;
+	margin: 10px;
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	border-radius: 50%;
+	color: white;
+	z-index: 5;
+	top: 0;
+	right: 0;
+	display: none;
+
+	@include bp(sm){
+		display: block;
+	}
+
+	// @include bp(md){
+	// 	right: 15%;
+	// }
+
+	// &.second{
+	// 	@include two-color-bg(#26a9e0, darken(#26a9e0, 5%), -45deg);
+	// 	top: 200px;
+	// }
+
+	&:after{
+		content: '';
+		position: absolute;
+		display: block;
+		width: 60px;
+		height: 60px;
+		top: 0px;
+		left: 0px;
+		border: 2px solid white;
+		border-radius: 50%;
+		z-index: 3;
+		@include stat-animation(stats-in, 60px, 0px, 80px, -10px);
+		@include animation('stats-in 1s normal 1s forwards cubic-bezier(0.175, 0.885, 0.320, 1.275)');
+	}
+
+	p{
+		//margin: -10px -20px;
+		@include rem(font-size, 1.6rem);
+		font-weight: bold;
+		line-height: 60px;
+	}
+}
+
+.logos-strip{
+	min-height: 140px;
+	background-color: $dark-grey;
+	padding: 18px 10px;
+
+	@include bp(md){
+		padding: 18px 80px 0;
+	}
+
+	&.small{
+		a{
+			display: inline-block;
+		    width: 49%;
+		    margin: 15px 0;
+		    padding: 0 10px;
+
+		    @include bp(sm){
+		    	margin: 10px 0;
+		    }
+
+		    @include bp(md){
+		    	width: 32.333%;
+		    	margin: 0;
+		    }
+
+		    &:last-of-type{
+		    	width: 100%;
+		    	padding: 0 40px;
+
+		    	@include bp(md){
+		    		width: 32.333%;
+		    		padding: 0 20px;
+		    	}
+
+		    	img{
+		    		@include bp(md){
+			    		width: 90%;
+			    	}
+		    	}
+		    }
+
+		    img{
+		    	width: 100%;
+
+		    	@include bp(md){
+		    		width: 75%;
+		    	}
+		    }
+		}
+	}
+
+	span{
+		display: inline-block;
+	    width: 100%;
+	    text-align: center;
+	    margin: 15px 0;
+
+	    @include bp(sm){
+	    	width: 49%;
+	    	margin: 10px 0;
+	    }
+
+	    @include bp(md){
+	    	width: 32.333%;
+	    	margin: 0;
+	    }
+
+	    &:last-of-type{
+	    	width: 100%;
+
+	    	@include bp(md){
+	    		width: 32.333%;
+	    	}
+	    }
+	}
+}

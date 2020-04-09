@@ -1,0 +1,277 @@
+/* TWO COLOR BACKGROUND */
+@mixin two-color-bg($color1, $color2, $deg) {
+  background: $color1;
+  background: -moz-linear-gradient($deg,  $color1 0%, $color1 50%, $color2 51%, $color2 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,$color1), color-stop(50%,$color1), color-stop(51%,$color2), color-stop(100%,$color2));
+  background: -webkit-linear-gradient($deg,  $color1 0%,$color1 50%,$color2 51%,$color2 100%);
+  background: -o-linear-gradient($deg,  $color1 0%,$color1 50%,$color2 51%,$color2 100%);
+  background: -ms-linear-gradient($deg,  $color1 0%,$color1 50%,$color2 51%,$color2 100%);
+  background: linear-gradient($deg,  $color1 0%,$color1 50%,$color2 51%,$color2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=#{$color1}, endColorstr=#{$color2},GradientType=1 );
+}
+/*-- Usage --*/
+/*
+	two-color-bg(#ffffff, #000000, 15deg);
+*/
+
+@mixin two-color-btn($color1, $color2, $deg){
+  padding: 10px 60px;
+  color: white;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: all 0.5s ease;
+  @include two-color-bg($color1, $color2, $deg);
+
+  &:hover{
+    text-decoration: none;
+    color: #DDD;
+  }
+}
+/*-- Usage --*/
+/*
+  two-color-btn(#ffffff, #000000, 15deg);
+*/
+
+/* CLEARFIX */
+@mixin clearfix {
+  &:before,
+  &:after {
+      content: " "; /* 1 */
+      display: table; /* 2 */
+  }
+
+  &:after {
+      clear: both;
+  }
+}
+/*-- Usage --*/
+/*
+  @include clearfix;
+*/
+
+
+/* PX to REM */
+@function parseInt($n) { 
+  @return $n / ($n * 0 + 1);
+}
+
+@mixin rem($property, $values) {
+  $px : (); 
+  $rem: (); 
+
+  @each $value in $values { 
+
+    @if $value == 0 or $value == auto { 
+      $px : append($px , $value);
+      $rem: append($rem, $value);
+    }
+
+    @else {
+      $unit: unit($value);    
+      $val: parseInt($value); 
+
+      @if $unit == "px" {  
+        $px : append($px,  $value);
+        $rem: append($rem, ($val / 10 + rem));
+      }
+
+      @if $unit == "rem" { 
+        $px : append($px,  ($val * 10 + px));
+        $rem: append($rem, $value);
+      }
+    }
+  }
+
+  @if $px == $rem {     
+    #{$property}: $px;  
+  } @else {
+    #{$property}: $px;  
+    #{$property}: $rem; 
+  }
+}
+/*-- Usage --*/
+/*
+	@include rem(font-size, 2.4rem); //24px
+*/
+
+/* Animations */
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }  
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }  
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};      
+}
+/*-- Usage --*/
+/* 
+	@include keyframes(slide-down) {
+	  0% { opacity: 1; }
+	  90% { opacity: 0; }
+	}
+
+	.element {
+	  width: 100px;
+	  height: 100px;
+	  background: black;
+	  @include animation('slide-down 5s 3');
+	}
+*/
+
+/* Transitions */
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+/*-- Usage --*/
+/* 
+	a {
+	  color: gray;
+	  @include transition(color .3s ease);
+	  &:hover {
+	    color: black;
+	  }
+	}
+*/
+
+/* Trasnform */
+@mixin transform($transforms) {
+     -moz-transform: $transforms;
+       -o-transform: $transforms;
+      -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+          transform: $transforms;
+}
+/*-- Usage --*/
+/* 
+  @include transform(rotate(360deg));
+*/
+
+/* Breakpoints */
+@mixin bp($break) {
+	@if $break == lg {
+		@media (min-width: $lg) { @content; }
+	}
+	@else if $break == md {
+		@media (min-width: $md) { @content; }
+	}
+	@else if $break == sm {
+		@media (min-width: $sm) { @content; }
+	} @else {
+		@media ($break) { @content; }
+	}
+}
+
+/*-- Usage --*/
+/* 
+	body {
+		background: pink;
+		@include bp(lg) { background: red; }
+		@include bp(md) { background: cyan; }
+		@include bp(sm) { background: green; }
+		@include bp("min-width: 480px") { background: yellow; }
+	}
+*/
+
+@mixin image-2x($image, $width, $height) {
+  @media (min--moz-device-pixel-ratio: 1.3),
+         (-o-min-device-pixel-ratio: 2.6/2),
+         (-webkit-min-device-pixel-ratio: 1.3),
+         (min-device-pixel-ratio: 1.3),
+         (min-resolution: 1.3dppx) {
+    /* on retina, use image that's scaled by 2 */
+    background-image: url($image);
+    background-size: $width $height;
+  }
+}
+
+/* Usage */
+/* 
+  @include image-2x("logo2x.png", 100px, 25px);
+*/
+
+@mixin showOnlyDesktop(){
+  display: none;
+
+    @include bp(md){
+      display: block;
+    }
+}
+
+@mixin showDesktop(){
+  display: none;
+
+    @include bp(sm){
+      display: block;
+    }
+}
+
+@mixin showMobile(){
+  @include bp(sm){
+    display: none;
+  }
+}
+
+@mixin mapMarker($name, $bg-url){
+  .map-marker-#{$name}{
+    background-image: url($bg-url);
+    background-size: 40px 80px;
+    background-position: 0 -25px;
+    width: 40px;
+    height: 60px;
+    
+    &:after{
+      content: '99999';
+      color: white;
+      display: block;
+      position: absolute;
+      top: -20px;
+      right: -15px;
+      background: #E26B6C;
+      font-size: 12px;
+      text-align: center;
+      border-radius: 50%;
+      line-height: 35px;
+      width: 35px;
+      height: 35px;
+    }
+    
+    &.active{
+        &:after{
+            background-color: #00A69C;
+        }
+    }
+  }
+}
+
+@mixin spin-icon(){
+  img{
+    @include transition(all .5s ease);
+  }
+
+  &:hover{
+    img{
+      @include transform(rotate(90deg));
+    }
+  }
+}

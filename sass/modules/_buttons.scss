@@ -1,0 +1,60 @@
+.light-blue-btn{
+	background-color: $light-blue;
+}
+
+.green-btn{
+	background-color: $green;
+}
+
+.lightgrey-btn{
+	background-color: $light-grey;
+}
+
+.grey-btn{
+	background-color: $grey;
+}
+
+.orange-btn{
+	background-color: $orange;
+}
+
+.red-btn{
+	background-color: $red;
+}
+
+.border-btn{
+	padding: 10px 20px;
+    border: 1px solid white;
+    border-radius: 20px;
+    margin: 0 5px;
+
+    @include bp(sm){
+		padding: 10px 30px;
+	}
+}
+
+.round-btn{
+	padding: 10px 30px;
+	color: white;
+	border-radius: 20px;
+	text-decoration: none;
+
+	&:hover{
+		text-decoration: none;
+		color: black;
+	}
+}
+
+.two-color-btn{
+	padding: 10px 60px;
+	color: white;
+	border-radius: 20px;
+	text-decoration: none;
+	transition: all 0.5s ease;
+	@include two-color-bg(#f75454, #ea9a5d, -15deg);
+
+	&:hover{
+		text-decoration: none;
+		color: black;
+	}
+}

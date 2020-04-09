@@ -1,0 +1,396 @@
+.home{
+	.menu-btn-wrapper{
+		background-color: transparent;
+		@include bp(md){
+	    	height: 0;
+	    }
+	}
+
+	.menu-btn{
+		@include bp(md){
+			top: 40px;
+		}
+	}
+
+	.sign-section{
+		display: none;
+	}
+}
+
+.menu-btn-wrapper{
+	background-color: $light-green;
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 52px;
+    z-index: 9000;
+
+    @include bp(md){
+    	height: 58px;
+    }
+
+    .wrapper{
+    	position: relative;
+    	width: 100%;
+    	height: 52px;
+    	max-width: 1280px;
+    	margin: 0 auto;
+
+    	@include bp(md){
+	    	height: 58px;
+	    }
+    }
+}
+
+.menu-btn{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 33px;
+	height: 33px;
+	background-color: $dark-green;
+	padding: 8px 6px;
+	cursor: pointer;
+	@include transition(all 0.2s ease);
+
+	@include bp(md){
+		width: 58px;
+		height: 58px;
+		padding: 15px 14px;
+		top: 0;
+		left: 80px;
+	}
+
+	&:hover{
+		padding: 6px 6px;
+
+		@include bp(md){
+			padding: 13px 14px;
+		}
+
+		span{
+			&:nth-child(2){
+				margin: 6px 0;
+
+				@include bp(md){
+					margin: 8px 0;
+				}
+			}
+		}
+	}
+
+	span{
+		display: block;
+		height: 3px;
+		width: 21px;
+		background-color: white;
+
+		&:nth-child(2){
+			@include transition(all 0.2s ease);
+			margin: 4px 0;
+		}
+
+		@include bp(md){
+			height: 6px;
+			width: 30px;
+		}
+	}
+}
+
+.sign-section{
+	color: white;
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 10px 40px 0 0;
+	text-align: center;
+	display: none;
+
+	@include bp(md){
+		display: block;
+	}
+
+	& > div{
+		display: inline-block;
+
+		&:first-child{
+			margin: 0 10px 0 0;
+			padding: 0 10px 0 0;
+			border-right: 1px solid white;
+		}
+	}
+
+	p{
+		font-family : 'OpenSansItalic', Helvetica, Arial, Sans-Serif;
+		@include rem(font-size, 1.4rem);
+		margin: 0;
+	}
+
+	a{
+		font-family : 'RalewaySemiBold', Helvetica, Arial, Sans-Serif;
+		@include rem(font-size, 1.4rem);
+		text-transform: uppercase;
+	}
+}
+
+.menu-container{
+	background-color: $light-orange;
+	color: white;
+	box-shadow: none;
+	& ul li ul li:hover>a, & ul li ul li:hover>span, & ul li ul li.active>a, & ul li ul li.active>span, & ul li ul li.sidr-class-active>a, & ul li ul li.sidr-class-active>span{
+		-webkit-box-shadow: inset 0 0 15px 3px $orange;
+	    -moz-box-shadow: inset 0 0 15px 3px $orange;
+	    box-shadow: inset 0 0 15px 3px $orange;
+	}
+	& ul li:hover>a, & ul li:hover>span, & ul li.active>a, & ul li.active>span, & ul li.sidr-class-active>a, & ul li.sidr-class-active>span{
+		-webkit-box-shadow: inset 0 0 15px 3px $orange;
+	    -moz-box-shadow: inset 0 0 15px 3px $orange;
+	    box-shadow: inset 0 0 15px 3px $orange;
+	}
+
+	h4{
+		padding: 0;
+		background: none;
+		box-shadow: none;
+		margin: 0;
+
+		a{
+			display: block;
+			font-family: 'QuicksandBold', Helvetica, Arial, Sans-Serif;
+			background-color: $orange;
+			@include rem(font-size, 2.4rem);
+			padding: 20px;
+		}
+	}
+	
+	// este es el boton de cerrar el menu
+	.menu-close{
+		padding: 20px 30px;
+
+		@include bp(sm){
+			padding: 30px;
+		}
+
+		img{
+			cursor: pointer;
+		}
+	}
+
+	// titulo del menu nivel 1
+	.menu-title{
+		a{
+			display: block;
+			font-family: 'QuicksandBold', Helvetica, Arial, Sans-Serif;
+			@include rem(font-size, 2.4rem);
+	  		line-height : 1.2;
+			color: white;
+			padding: 12px 25px;
+			background-color: $dark-orange;
+		}
+	}
+
+	.menu-item{
+
+		a{
+			font-family: 'RobotoRegular', Helvetica, Arial, Sans-Serif;
+			@include rem(font-size, 1.6rem);
+			border-bottom: 1px solid $dark-orange;
+			color: white;
+			padding: 12px 10px 12px 40px;
+			background-color: transparent;
+		}
+	}
+
+	.sub-menu{
+		display: none;
+		opacity: 0;
+		@include transition(all .3s 2s ease);
+
+		&.open{
+			display: block;
+			opacity: 1;
+		}
+	}
+
+	ul{
+		list-style: none;
+
+		li{
+			border: 0;
+		}
+	}
+}
+
+.blue-bar-menu{
+	@include showDesktop();
+	font-family : 'RalewayBold', Helvetica, Arial, Sans-Serif;
+	@include rem(font-size, 1.6rem);
+	background-color: $light-blue;
+	position: relative;
+	color: white;
+	padding: 13px 0;
+	text-align: center;
+	z-index: 2;
+
+	a{
+		display: inline-block;
+		vertical-align: middle;
+		max-width: 130px;
+		padding: 0 10px;
+		margin: 0;
+		position: relative;
+
+		&:last-of-type{
+			margin: 0 0 0 10px;
+
+			&:after{
+				display: none;
+			}
+
+			&.selected{
+				&:before{
+					bottom: -36px;
+				}
+			}
+		}
+
+		&:after{
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: 40px;
+			border-left: 1px solid white;
+		}
+
+		&.selected{
+			&:before{
+				content: '';
+				display: block;
+				position: absolute;
+				bottom: -25px;
+				left: 0;
+				right: 0;
+				width: 50px;
+				margin: 0 auto;
+				z-index: 1;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 20px 25px 0 25px;
+				border-color: $light-blue transparent transparent transparent;
+			}
+		}
+	}
+
+	&.bottom{
+		a{
+			&:last-of-type{
+				margin: 0 0 0 10px;
+
+				&:after{
+					display: none;
+				}
+
+				&.selected{
+					&:before{
+						top: -36px;
+					}
+				}
+			}
+
+			&.selected{
+				&:before{
+					content: '';
+					display: block;
+					position: absolute;
+					top: -25px;
+					left: 0;
+					right: 0;
+					width: 50px;
+					margin: 0 auto;
+					z-index: 1;
+					width: 0;
+					height: 0;
+					border-style: solid;
+					border-width: 0 25px 20px 25px;
+					border-color: transparent transparent $light-blue transparent;
+				}
+			}
+		}
+	}
+
+	.title-overlay-box{
+		position: absolute;
+		bottom: -104px;
+		left: 0;
+		width: 100%;
+		background-color: transparentize(black, 0.5);
+
+		h1{
+			font-family : 'RalewaySemiBold', Helvetica, Arial, Sans-Serif;
+			@include rem(font-size, 4.0rem);
+		    margin: 40px 0 20px;
+		}
+	}
+}
+
+.second-menu{
+	@include showMobile();
+	background-color: $grey;
+	position: relative;
+    z-index: 8000;
+    margin: 0 auto;
+    width: 250px;
+
+	.dropdown-wrapper{
+			width: 250px;
+			height: 42px;
+			position: relative;
+
+		&.open{
+			.item{
+				border-top: none;
+
+				&:first-child{
+					border: 1px solid $light-blue;
+				}
+			}
+		}
+
+		img{
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			width: 20px;
+			height: 20px;
+			pointer-events: none;
+			z-index: 3;
+		}
+	  
+		.item {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			background-color: white;
+			text-align: left;
+			color: $light-blue;
+			border: 1px solid $light-blue;
+			z-index: 1;
+
+			&.selected{
+				z-index: 2;
+			}
+
+			a{
+				color: $light-blue;
+				display: block;
+			    width: 100%;
+			    padding: 10px;
+			}
+		}
+	}
+}

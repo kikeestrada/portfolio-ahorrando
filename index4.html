@@ -1,0 +1,327 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Ahorrando para tu futuro">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Ahorrando para tu futuro</title>
+
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel='stylesheet' type="text/css" href='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.css'/>
+
+        <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
+        <link rel="stylesheet" type="text/css" href="css/jquery.sidr.light.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    <body class="user-dashboard">
+        <div class="menu-btn-wrapper">
+          <div class="wrapper">
+            <a class="menu-btn sidr-toggle" id="simple-menu" href="#sidr">
+              <span class="white-bar"></span>
+              <span class="white-bar"></span>
+              <span class="white-bar"></span>
+            </a>
+            <div class="sign-section">
+              <div class="signin">
+                <a href="#"><img src="images/ribbon.svg" alt="ribbon" width="32" height="32"></a>&nbsp;<a href="#">JUAN PEREZ</a>&nbsp;<a href="#"><img src="images/cog.svg" alt="settings" width="16" height="16"></a>
+              </div>
+              <div class="signup">
+                <a href="#">Salir</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-container" id="sidr">
+          <div class="menu-close">
+            <img class="sidr-toggle" src="images/close-icon.svg" alt="close-icon" width="25" height="25">
+          </div>
+          <h4><a href="./index.html">Home</a></h4>
+          <ul>
+              <li class="menu-title">
+                <a href="#">Biblioteca de<br/>materiales</a>
+                <ul class="sub-menu open">
+                  <li class="menu-item"><a href="index5.html">Consumo Responsable</a></li>
+                  <li class="menu-item"><a href="index4.html">Colecciones</a></li>
+                </ul>
+              </li>
+              <li class="menu-title">
+                <a href="#">El Proyecto</a>
+                <ul class="sub-menu">
+                  <li class="menu-item"><a href="index2.html">Trabajo con Escuelas</a></li>
+                  <li class="menu-item"><a href="index3.html">Escuelas Registradas</a></li>
+                </ul>
+              </li>
+
+              <li class="menu-title">
+                <a href="#">Involúcrate</a>
+                <ul class="sub-menu">
+                  <li class="menu-item"><a href="#">Registro de escuelas</a></li>
+                  <li class="menu-item"><a href="#">Registro de usuarios</a></li>
+                </ul>
+              </li>
+              <li class="menu-title">
+                <a href="#">Mi Cuenta</a>
+                <ul class="sub-menu">
+                  <li class="menu-item"><a href="#">Ingresar</a></li>
+                  <li class="menu-item"><a href="#">Nuevo Usuario</a></li>
+                </ul>
+              </li>
+          </ul>
+      </div>
+    	<div class="container-fluid">
+    		<div class="row">
+          <div class="col-md-12 main-logo-container">
+            <a class="main-logo" href="#"><img class="main-logo" src="images/logo-a.svg" alt="main_logo" width="372" height="230"></a>
+          </div>
+          <div class="col-md-12 main-header">
+              <!-- <a class="main-logo" href="#"><img class="main-logo" src="images/logo-a.svg" alt="main_logo" width="372" height="230"></a> -->
+          </div>
+          <div class="col-md-12">
+            <div class="row">
+              <div class="main-content">
+                <header>
+                  <h1 class="light-green">MI CUENTA</h1>
+                  <!-- <ul class="dash-menu">
+                    <li><a href="#" class="border-btn active">Usuario</a></li>
+                    <li><a href="#" class="border-btn">Administrador</a></li>
+                    <li><a href="#" class="border-btn">Dashboard</a></li>
+                  </ul> -->
+                </header>
+                <section class="colecciones">
+                  <header>
+                    <h2 class="red">MIS COLECCIONES</h2>
+                    <a href="#" class="border-btn"><img src="images/plus-icon-red.svg" alt="plus-icon">&nbsp;&nbsp;Crear nueva colección</a>
+                  </header>
+
+                  <div class="collections-container">
+                    <div class="collection">
+                      <div class="manage-icons">
+                        <a href="#"><img src="images/clear-trashIcon.svg" alt="delete"></a>
+                        <a href="#"><img src="images/clear-editIcon.svg" alt="edit"></a>
+                      </div>
+                      <h3>Mis documentos favoritos</h3>
+                      <div class="previews">
+                        <figure style="background-image:url('images/aprende-1.png');"></figure>
+                        <figure style="background-image:url('images/aprende-4.png');"></figure>
+                        <figure style="background-image:url('images/aprende-6.png');"></figure>
+                      </div>
+                      <a href="#" class="cta-btn red-btn">Ver más</a>
+                    </div>
+                    <div class="collection">
+                      <div class="manage-icons">
+                        <a href="#"><img src="images/clear-trashIcon.svg" alt="delete"></a>
+                        <a href="#"><img src="images/clear-editIcon.svg" alt="edit"></a>
+                      </div>
+                      <h3>Mis documentos favoritos</h3>
+                      <div class="previews">
+                        <figure style="background-image:url('images/aprende-4.png');"></figure>
+                        <figure style="background-image:url('images/aprende-2.png');"></figure>
+                        <figure style="background-image:url('images/aprende-6.png');"></figure>
+                      </div>
+                      <a href="#" class="cta-btn red-btn">Ver más</a>
+                    </div>
+                    <div class="collection hidden-xs">
+                      <div class="manage-icons">
+                        <a href="#"><img src="images/clear-trashIcon.svg" alt="delete"></a>
+                        <a href="#"><img src="images/clear-editIcon.svg" alt="edit"></a>
+                      </div>
+                      <h3>Mis documentos favoritos</h3>
+                      <div class="previews">
+                        <figure style="background-image:url('images/aprende-3.png');"></figure>
+                        <figure style="background-image:url('images/aprende-1.png');"></figure>
+                        <figure style="background-image:url('images/aprende-4.png');"></figure>
+                      </div>
+                      <a href="#" class="cta-btn red-btn">Ver más</a>
+                    </div>
+                    <div class="collection hidden-xs">
+                      <div class="manage-icons">
+                        <a href="#"><img src="images/clear-trashIcon.svg" alt="delete"></a>
+                        <a href="#"><img src="images/clear-editIcon.svg" alt="edit"></a>
+                      </div>
+                      <h3>Mis documentos favoritos</h3>
+                      <div class="previews">
+                        <figure style="background-image:url('images/aprende-2.png');"></figure>
+                        <figure style="background-image:url('images/aprende-6.png');"></figure>
+                        <figure style="background-image:url('images/aprende-3.png');"></figure>
+                      </div>
+                      <a href="#" class="cta-btn red-btn">Ver más</a>
+                    </div>
+                  </div>
+                  <div class="cta-container">
+                    <a href="#" class="border-btn">Ver más colecciones</a>
+                  </div>
+                </section>
+                <hr>
+                <section class="aportes">
+                  <header>
+                    <h2 class="red">MIS APORTES</h2>
+                    <a href="#" class="border-btn"><img src="images/plus-icon-red.svg" alt="plus-icon">&nbsp;&nbsp;Agregar documento o referencia</a>
+                  </header>
+                  <div class="contributions-container">
+                    <div class="contribution">
+                      <div class="manage-icons">
+                        <a href="#"><img src="images/clear-trashIcon.svg" alt="delete"></a>
+                        <a href="#"><img src="images/clear-editIcon.svg" alt="edit"></a>
+                      </div>
+                      <a href="#"><figure class="video" style="background-image:url('images/aprende-2.png');"></figure></a>
+                      <h3>El Dinero no crece en los árboles</h3>
+                      <p>Educación Financiera</p>
+                      <a href="#" class="expand-icon"><img src="images/expand-icon-blue.svg" alt="expand-icon"></a>
+                    </div>
+                    <div class="contribution">
+                      <div class="manage-icons">
+                        <a href="#"><img src="images/clear-trashIcon.svg" alt="delete"></a>
+                        <a href="#"><img src="images/clear-editIcon.svg" alt="edit"></a>
+                      </div>
+                      <a href="#"><figure style="background-image:url('images/aprende-1.png');"></figure></a>
+                      <h3>Recicla</h3>
+                      <p>Manejo de desechos</p>
+                      <a href="#" class="expand-icon"><img src="images/expand-icon-blue.svg" alt="expand-icon"></a>
+                    </div>
+                    <div class="contribution">
+                      <div class="manage-icons">
+                        <a href="#"><img src="images/clear-trashIcon.svg" alt="delete"></a>
+                        <a href="#"><img src="images/clear-editIcon.svg" alt="edit"></a>
+                      </div>
+                      <a href="#"><figure class="video" style="background-image:url('images/aprende-5.png');"></figure></a>
+                      <h3>El Dinero no crece en los árboles</h3>
+                      <p>Educación Financiera</p>
+                      <a href="#" class="expand-icon"><img src="images/expand-icon-blue.svg" alt="expand-icon"></a>
+                    </div>
+                    <div class="contribution">
+                      <div class="manage-icons">
+                        <a href="#"><img src="images/clear-trashIcon.svg" alt="delete"></a>
+                        <a href="#"><img src="images/clear-editIcon.svg" alt="edit"></a>
+                      </div>
+                      <a href="#"><figure style="background-image:url('images/aprende-4.png');"></figure></a>
+                      <h3>Recicla</h3>
+                      <p>Manejo de desechos</p>
+                      <a href="#" class="expand-icon"><img src="images/expand-icon-blue.svg" alt="expand-icon"></a>
+                    </div>
+                  </div>
+                  <div class="cta-container">
+                    <a href="#" class="border-btn">Ver más aportes</a>
+                  </div>
+                </section>
+                <section class="row info">
+                  <div class="col-sm-6">
+                    <h3>Comentarios recientes</h3>
+                    <div class="info-block comments">
+                      <div class="comment">
+                        <h4>Daniel Arturo Valladares Moreno</h4>
+                        <small>24 de oct 2013</small>
+                        <p>“es super bueno” enserio soy de dicovery school</p>
+                      </div>
+                      <div class="comment">
+                        <h4>Daniel Arturo Valladares Moreno</h4>
+                        <small>24 de oct 2013</small>
+                        <p>“es super bueno” enserio soy de dicovery school</p>
+                      </div>
+                      <div class="comment">
+                        <h4>Daniel Arturo Valladares Moreno</h4>
+                        <small>24 de oct 2013</small>
+                        <p>“es super bueno” enserio soy de dicovery school</p>
+                      </div>
+                      <div class="comment">
+                        <h4>Daniel Arturo Valladares Moreno</h4>
+                        <small>24 de oct 2013</small>
+                        <p>“es super bueno” enserio soy de dicovery school</p>
+                      </div>
+                      <p class="link"><a href="#">VER TODOS</a></p>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <h3>Información personal</h3>
+                    <div class="info-block personal">
+                      <div>
+                        <p><strong>Nombre:</strong> Juan Pérez Pérez</p>
+                      </div>
+                      <div>
+                        <p><strong>Contraseña:</strong> ****</p>
+                      </div>
+                      <div>
+                        <p><strong>Género:</strong> -----</p>
+                      </div>
+                      <div>
+                        <p><strong>Fecha de nacimiento:</strong> -----</p>
+                      </div>
+                      <div>
+                        <p><strong>País:</strong> Costa Rica</p>
+                      </div>
+                      <div>
+                        <p><strong>Provincia/estado:</strong> San José</p>
+                      </div>
+                      <div>
+                        <p><strong>Profesión:</strong> Estudiante</p>
+                      </div>
+                      <p class="link"><img src="images/edit-icon-info.svg" alt="edit-icon" width="16">&nbsp;&nbsp;<a href="#">EDITAR</a></p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+          <footer class="col-md-12 footer">
+            <div class="row">
+              <div class="column">
+                <ul>
+                  <li class="title"><a href="#">Home</a></li>
+                </ul>
+              </div>
+              <div class="column">
+                <ul>
+                  <li class="title"><a href="#">Biblioteca de materiales</a></li>
+                  <li class="link"><a href="#">Medio Ambiente</a></li>
+                  <li class="link"><a href="#">Educación Financiera</a></li>
+                  <li class="link"><a href="#">Consumo Responsable</a></li>
+                  <li class="link"><a href="#">Colecciones</a></li>
+                </ul>
+              </div>
+              <div class="column">
+                <ul>
+                  <li class="title"><a href="#">El proyecto</a></li>
+                  <li class="link"><a href="#">Trabajo con Escuelas</a></li>
+                  <li class="link"><a href="#">Escuelas Registradas</a></li>
+                  <li class="link"><a href="#">Experiencias</a></li>
+                </ul>
+              </div>
+              <div class="column">
+                <ul>
+                  <li class="title"><a href="#">Involúcrese</a></li>
+                  <li class="link"><a href="#">Registro de escuelas</a></li>
+                  <li class="link"><a href="#">Registro de usuarios</a></li>
+                </ul>
+              </div>
+              <div class="column">
+                <ul>
+                  <li class="title"><a href="">Mi cuenta</a></li>
+                </ul>
+              </div>
+            </div>
+          </footer>
+          <div class="col-md-12 logos-strip small">
+              <span><img src="images/planeta_verde_logo.svg" alt="planeta_verde_logo" width="235" height="100"></span>
+              <span><img src="images/social_corporativa.svg" alt="social_corporativa.svg" width="237" height="77"></span>
+              <span><img src="images/bac_credomatic.svg" alt="social_corporativa.svg" width="300" height="31"></span>
+          </div>
+    		</div>
+    	</div>
+        
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
+
+      <!-- Twitter feed script 
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      <script src="js/vendor/instafeed.min.js"></script>-->
+
+      <script src="js/vendor/slick/slick.min.js"></script>
+      <script src="js/vendor/jquery.sidr.min.js"></script>
+      <script src="js/vendor/enquire.min.js"></script>
+      <script src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
+      
+      <script src="js/main.js"></script>
+    </body>
+</html>
